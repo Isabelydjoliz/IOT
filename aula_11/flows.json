@@ -1,0 +1,213 @@
+[
+    {
+        "id": "bfaa75c418efdb98",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0fe1c51dda8891ca",
+        "type": "aedes broker",
+        "z": "bfaa75c418efdb98",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": null,
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "985280047dda937a"
+            ],
+            [
+                "182846a1965e3ab9"
+            ]
+        ]
+    },
+    {
+        "id": "985280047dda937a",
+        "type": "debug",
+        "z": "bfaa75c418efdb98",
+        "name": "debug status",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "182846a1965e3ab9",
+        "type": "debug",
+        "z": "bfaa75c418efdb98",
+        "name": "debug publicacoes",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b894d80696b6c1fe",
+        "type": "mqtt in",
+        "z": "bfaa75c418efdb98",
+        "name": "mqqt in",
+        "topic": "lab1",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "ff3dfd6c2ac483f4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "745e35e6ebafd3d1"
+            ]
+        ]
+    },
+    {
+        "id": "79471eb1a52a6278",
+        "type": "mqtt out",
+        "z": "bfaa75c418efdb98",
+        "name": "mqqt out",
+        "topic": "lab1",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ff3dfd6c2ac483f4",
+        "x": 860,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e121b5c2ec603f56",
+        "type": "comment",
+        "z": "bfaa75c418efdb98",
+        "name": "mqqt in",
+        "info": "",
+        "x": 290,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "cf91abcaf09af459",
+        "type": "comment",
+        "z": "bfaa75c418efdb98",
+        "name": "mqqt out",
+        "info": "",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "dcc993b024e8f56b",
+        "type": "inject",
+        "z": "bfaa75c418efdb98",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Isabely D´joliz",
+        "payloadType": "str",
+        "x": 690,
+        "y": 420,
+        "wires": [
+            [
+                "79471eb1a52a6278"
+            ]
+        ]
+    },
+    {
+        "id": "745e35e6ebafd3d1",
+        "type": "debug",
+        "z": "bfaa75c418efdb98",
+        "name": "debug lab1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ff3dfd6c2ac483f4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a839504218071d1f",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-aedes": "0.15.0"
+        }
+    }
+]
